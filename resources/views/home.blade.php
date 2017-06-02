@@ -7,7 +7,9 @@
 
             <div class="pull-right">
                 @if($phones->hasMorePages())
-                    <small>Displaying {{ $phones->count() * $phones->currentPage()}} of {{ $phones->total() }}</small>
+                    <small>
+                        Displaying {{ $phones->count() * $phones->currentPage()}} of {{ $phones->total() }}
+                    </small>
                 @endif
             </div>
                         
@@ -32,6 +34,7 @@
                         <td>
                             <a 
                                 href="{{ route('phoneTarrif', ['phoneName' => $phone->name]) }}"
+                                title="View all the tarrifs for this phone make and model" 
                             >
                                 {{ $phone->name }}
                             </a>

@@ -3,6 +3,14 @@
 @section('content')
 	<div class="row">
         <div class="col-xs-8 col-xs-offset-2">
+            <a href="{{ URL::previous() }}" title="Go Back to Previous Page">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+
+                Go Back
+            </a>
+
+            <hr>
+
         	@if(isset($phones))
             <p>
                 Following tarrifs are available for <strong>{{ $phones[0]->make }} {{ $phones[0]->model }}</strong>:
@@ -37,6 +45,10 @@
 	        		@endforeach
 	        	</tbody>
 	        </table>
+
+            <div class="pull-right">
+                {{ $phones->links() }}
+            </div>
 	        @else
                 <div class="alert alert-danger">
                     <strong>No phone</strong> are available to be searched!

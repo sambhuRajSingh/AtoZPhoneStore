@@ -15,7 +15,10 @@
                 <li>
                     <a href="https://github.com/sambhuRajSingh/AtoZPhoneStore"
                        target="_blank"
-                    >View Git Repository</a>
+                    >
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                        View Git Repository
+                    </a>
                 <li>
             </ul>
         </div>
