@@ -25,18 +25,7 @@ class PhoneMakeAndModelController extends Controller
     public function index()
     {
         $howMany = $this->request->input('how_many', 20);
-        $phones = $this->phoneFinderService->paginatedMakeAndModel($howMany);
+        $phones = $this->phoneFinderService->paginatedByMakeAndModel($howMany);
         return View('home', compact('phones', 'howMany'));
-    }    
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Phone  $phone
-     * @return \Illuminate\Http\Response
-     */
-    public function show($phoneName)
-    {
-        dd($phoneName);
-    }    
+    }   
 }

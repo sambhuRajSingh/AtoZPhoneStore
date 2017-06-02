@@ -13,7 +13,7 @@ class PhoneFinderService
         $this->phone = $phone;
     }
 
-    public function paginatedMakeAndModel($howMany = 20)
+    public function paginatedByMakeAndModel($howMany = 20)
     {
         return $this->phone
                     ->select(
@@ -26,6 +26,13 @@ class PhoneFinderService
                     ->groupBy('model')
                     ->groupBy('name')
                     ->orderBy('make', 'asc')
+                    ->paginate($howMany);
+    }
+
+    public function paginatedByName($phoneName, $howMany = 20)
+    {
+        return $this->phone
+                    ->whereName($phoneName)
                     ->paginate($howMany);
     }
 }

@@ -2,8 +2,11 @@
 
 @section('content')
 	<div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-8 col-xs-offset-2">
         	@if(isset($phones))
+            <p>
+                Following tarrifs are available for <strong>{{ $phones[0]->make }} {{ $phones[0]->model }}</strong>:
+            </p>
 	        <table class="table no-border table-striped">
 	        	<thead>
 	        		<tr>	        			
@@ -16,12 +19,6 @@
 	        	<tbody>
 	        		@foreach($phones as $phone)
 	        		<tr>
-	        			<td>
-	        				{{ $phone->make }}
-	        			</td>
-	        			<td>
-	        				{{ $phone->model }}
-	        			</td>
 	        			<td>
 	        				{{ $phone->name }}
 	        				<br>
