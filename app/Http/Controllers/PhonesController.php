@@ -2,11 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Phone;
 use Illuminate\Http\Request;
+use App\Services\PhoneFinderService;
+use App\Phone;
 
-class PhoneController extends Controller
+class PhonesController extends Controller
 {
+	private $phoneFinderService;
+
+	public function __construct(PhoneFinderService $phoneFinderService)
+	{
+		$this->phoneFinderService = $phoneFinderService;
+	}
+
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +22,8 @@ class PhoneController extends Controller
      */
     public function index()
     {
+    	// dd(Phone::latest()->get());
+    	dd($this->phoneFinderService->allPhones());
         return View('welcome');
     }
 
