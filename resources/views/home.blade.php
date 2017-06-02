@@ -44,20 +44,15 @@
                     @endforeach
                 </tbody>
             </table>
+
+            <div class="pull-right">
+                {{ $phones->links() }}
+            </div>
             @else
                 <div class="alert alert-danger">
                     <strong>No phone</strong> are available to be searched!
                 </div>
             @endif
         </div>
-        
-    </div>
-
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2">
-            <div class="pull-right">
-                {{ $phones->links() }}
-            </div>
-        </div>
-    </div>
+    </div>    
 @endsection

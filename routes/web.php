@@ -1,3 +1,4 @@
 <?php
 
-Route::get('/', 'PhonesController@index')->name('home');
+Route::get('/', 'PhoneMakeAndModelController@index')->name('home');
+Route::get('/{phoneName}', 'PhoneMakeAndModelController@show')->name('phoneDetails');

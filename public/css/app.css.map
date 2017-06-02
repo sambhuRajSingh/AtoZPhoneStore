@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAAA;EACI,0BAA0B;CAC7B;;AACD;EACI,iBAAiB;EACjB,qBAAqB;CACxB;;AACD;EACI,iBAAiB;CACpB","file":"app.css","sourcesContent":[".browse-section {\n    background-color: #fbfbfb;\n}\n.browse-form {\n    margin-top: 70px;\n    padding-bottom: 20px;\n}\n.body-container {\n    margin-top: 60px;\n}"]}
