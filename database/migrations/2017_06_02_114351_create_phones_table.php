@@ -23,8 +23,8 @@ class CreatePhonesTable extends Migration
             $table->string('tar_code', 50);
             $table->string('tar_name', 255);
             $table->integer('tar_minutes')->unsigned();
-            $table->integer('tar_sms')->unsigned();;
-            $table->integer('tar_data')->unsigned();;
+            $table->integer('tar_sms')->unsigned()->nullable();
+            $table->integer('tar_data')->unsigned()->nullable();
             $table->timestamps();
         });
     }
