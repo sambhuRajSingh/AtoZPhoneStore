@@ -31,7 +31,7 @@
                         </td>
                         <td>
                             <a 
-                                href="{{ route('phoneDetails', ['phoneName' => $phone->name]) }}"
+                                href="{{ route('listByPhoneName', ['phoneName' => $phone->name]) }}"
                             >
                                 {{ $phone->name }}
                             </a>
