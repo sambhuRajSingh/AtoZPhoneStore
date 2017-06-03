@@ -18,7 +18,7 @@
                     <br><br>
                 @endif
             </div>
-                        
+
             <table class="table no-border table-striped">
                 <thead>
                     <tr>
@@ -29,7 +29,7 @@
                             {{ sort_phones_by('model', 'Model') }}
                         </th>
                         <th>{{ sort_phones_by('name', 'Name') }}</th>
-                        <th>Found</th>                                          
+                        <th>Found</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -71,5 +71,5 @@
                 </div>
             @endif
         </div>
-    </div>    
+    </div>
 @endsection

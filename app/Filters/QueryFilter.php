@@ -47,18 +47,18 @@ abstract class QueryFilter
     {
         $this->builder = $builder;
 
-        //['reference' => 'desc', 'name' => 'asc']
+        //['make' => 'desc', 'model' => 'asc']
         foreach($this->filters() as $name => $value) {
-            //check if method reference exist on the class for e.g., $documentFilters
+            //check if method model exist on the class for e.g., $phoneFilters
             if (method_exists($this, $name)) {        
                 /**
-                 * For e.g. calls the method name  ($documentFilters->reference)
+                 * For e.g. calls the method name  ($phoneFilters->model)
                  * and pass the value as parameter into the method.
                  *
-                 * $documentFilters->reference('desc');
+                 * $phoneFilters->model('desc');
                  *
                  * On $this object called the method $name, and then send the $value
-                 * as a parementer into the method $name. Array fileter is getting 
+                 * as a parementer into the method $name. Array filter is getting
                  * rid of any falsy value including empty string.
                  *
                  * If empty we don't want to call it.
@@ -66,11 +66,6 @@ abstract class QueryFilter
                 if (!empty($value)) { 
                     call_user_func_array([$this, $name], array_filter([$value]));
                 }
-                //call_user_func_array(__NAMESPACE__ .'\Foo::test', array('Hannes'));
-                //call_user_func_array(array(__NAMESPACE__ .'\Foo', 'test'), array('Philip'));
-
-                //Alternative to above
-                // (trim($value)) ? $this->$name($value) : $this->$name();
             }
         }
 
