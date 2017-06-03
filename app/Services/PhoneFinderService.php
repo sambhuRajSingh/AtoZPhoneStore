@@ -34,8 +34,7 @@ class PhoneFinderService
 
         if ($this->phoneFilters->request->all()) {
             $phones = $phones->filter($this->phoneFilters);
-        } else {
-            //@TODO: orderByMake()
+        } else {            
             $phones->orderBy('make', 'asc');
         }        
                     
