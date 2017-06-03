@@ -16,9 +16,13 @@
             <table class="table no-border table-striped">
                 <thead>
                     <tr>
-                        <th>Make</th>
-                        <th>Model</th>
-                        <th>Name</th>
+                        <th>
+                            {{ sort_phones_by('make', 'Make') }}
+                        </th>
+                        <th>
+                            {{ sort_phones_by('model', 'Model') }}
+                        </th>
+                        <th>{{ sort_phones_by('name', 'Name') }}</th>
                         <th>Found</th>                                          
                     </tr>
                 </thead>
@@ -49,7 +53,11 @@
             </table>
 
             <div class="pull-right">
-                {{ $phones->links() }}
+                {!! $phones->appends([
+                    'page' => $howMany,
+                    'make'  => $make,
+                    'model' => $model
+                ])->render() !!}
             </div>
             @else
                 <div class="alert alert-danger">
