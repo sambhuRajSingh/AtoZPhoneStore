@@ -6,7 +6,7 @@
             @if(isset($phones))
 
             <p class="lead">
-                Inventory By Phone Make and Model:
+                Inventories by Phone Make and Model:
             </p>
 
             <div class="pull-right">
