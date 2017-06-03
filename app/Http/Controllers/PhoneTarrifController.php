@@ -24,6 +24,9 @@ class PhoneTarrifController extends Controller
      */
     public function index($phoneName)
     {
-        return View('phoneTarrifs')->with('phones', $this->phoneFinderService->paginatedByName($phoneName));
+        return View('phoneTarrifs')->with(
+            'phones', 
+            $this->phoneFinderService->paginatedByName($phoneName)
+        );
     }
 }

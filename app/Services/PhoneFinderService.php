@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use DB;
+use Config;
 use App\Phone;
 use App\Filters\PhoneFilters;
 
@@ -18,7 +19,7 @@ class PhoneFinderService
         $this->phoneFilters = $phoneFilters;
     }
 
-    public function paginatedByMakeAndModel($howMany = 20)
+    public function paginatedByMakeAndModel()
     {
         $phones = $this->phone
                     ->select(
@@ -36,15 +37,15 @@ class PhoneFinderService
         } else {
             //@TODO: orderByMake()
             $phones->orderBy('make', 'asc');
-        }
+        }        
                     
-        return $phones->paginate($howMany);
+        return $phones->paginate(Config::get('sorting.phone-make-model.displayPerPage'));
     }
 
-    public function paginatedByName($phoneName, $howMany = 20)
+    public function paginatedByName($phoneName)
     {
         return $this->phone
                     ->whereName($phoneName)
-                    ->paginate($howMany);
+                    ->paginate(Config::get('sorting.phone-tarrif.displayPerPage'));
     }
 }

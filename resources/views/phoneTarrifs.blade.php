@@ -11,10 +11,23 @@
 
             <hr>
 
-        	@if(isset($phones))
-            <p>
+        	@if(isset($phones))            
+
+            <p class="lead">
                 Following tarrifs are available for <strong>{{ $phones[0]->make }} {{ $phones[0]->model }}</strong>:
             </p>
+
+            <div class="pull-right">
+                @if($phones->hasMorePages())
+                    <small>
+                        Displaying {{ $phones->count() * $phones->currentPage()}} of {{ $phones->total() }}
+                    </small>
+                    
+                    <br><br>
+                @endif
+            </div>
+
+
 	        <table class="table no-border table-striped">
 	        	<thead>
 	        		<tr>	        			
@@ -30,7 +43,8 @@
 	        			<td>
 	        				{{ $phone->name }}
 	        				<br>
-	        				<small>{{ $phone->tar_name }}</small>
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+	        				<small><em>{{ $phone->tar_name }}</em></small>
 	        			</td>	        			
 	        			<td>
 	        				{{ $phone->tar_minutes }}

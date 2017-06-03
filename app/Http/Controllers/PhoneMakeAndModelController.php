@@ -24,11 +24,12 @@ class PhoneMakeAndModelController extends Controller
      */
     public function index()
     {
-        $howMany = $this->request->input('how_many', 20);
+        $phones = $this->phoneFinderService->paginatedByMakeAndModel();
+        
         $make = $this->request->input('make', '');
         $model = $this->request->input('model', '');
+        $name = $this->request->input('name', '');
 
-        $phones = $this->phoneFinderService->paginatedByMakeAndModel($howMany);
-        return View('home', compact('phones', 'howMany', 'make', 'model'));
+        return View('home', compact('phones', 'make', 'model', 'name'));
     }   
 }

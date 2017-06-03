@@ -5,11 +5,17 @@
         <div class="col-xs-8 col-xs-offset-2">
             @if(isset($phones))
 
+            <p class="lead">
+                Inventory By Phone Make and Model:
+            </p>
+
             <div class="pull-right">
                 @if($phones->hasMorePages())
                     <small>
                         Displaying {{ $phones->count() * $phones->currentPage()}} of {{ $phones->total() }}
                     </small>
+
+                    <br><br>
                 @endif
             </div>
                         
@@ -54,9 +60,9 @@
 
             <div class="pull-right">
                 {!! $phones->appends([
-                    'page' => $howMany,
-                    'make'  => $make,
-                    'model' => $model
+                    'make' => $make,
+                    'model' => $model,
+                    'name' => $name
                 ])->render() !!}
             </div>
             @else
