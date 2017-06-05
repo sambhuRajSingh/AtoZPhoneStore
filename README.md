@@ -12,13 +12,23 @@ git clone https://github.com/sambhuRajSingh/AtoZPhoneStore.git
 
 Create a Database: AtoZPhoneStore
 
+
+
 Update .env file:
+
 DB_CONNECTION=mysql
+
 DB_HOST=localhost
+
 DB_PORT=3306
+
 DB_DATABASE=AtoZPhoneStore
-DB_USERNAME=root
-DB_PASSWORD=rootwdp
+
+DB_USERNAME=yourUsername
+
+DB_PASSWORD=yourPassword
+
+
 
 php artisan migrate
 
