@@ -16,17 +16,17 @@ Create a Database: AtoZPhoneStore
 
 Update .env file:
 
-DB_CONNECTION=mysql
+    DB_CONNECTION=mysql
 
-DB_HOST=localhost
+    DB_HOST=localhost
 
-DB_PORT=3306
+    DB_PORT=3306
 
-DB_DATABASE=AtoZPhoneStore
+    DB_DATABASE=AtoZPhoneStore
 
-DB_USERNAME=yourUsername
+    DB_USERNAME=yourUsername
 
-DB_PASSWORD=yourPassword
+    DB_PASSWORD=yourPassword
 
 
 
